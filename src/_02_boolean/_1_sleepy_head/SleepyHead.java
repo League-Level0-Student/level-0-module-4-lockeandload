@@ -13,7 +13,7 @@ public class SleepyHead {
 		// value.
 		
 		boolean isWeekend = false;
-		
+		isWeekend = true;
         // 1.) Run the program and look at the if-else statement below.
 		
         // 2.) Change the value of isWeekend so that the pop-up in the
