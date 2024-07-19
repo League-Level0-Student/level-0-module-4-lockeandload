@@ -11,7 +11,7 @@ import processing.core.PImage;
  *    top level of this module. It can be anything as long as it has large eyes!
  * 
  * 2. Declare a variable for the image:
- *    PImage face;
+ *   PImage face;
  * 
  * 3. In your setup() method, import your image using the following code:
  *    face = loadImage("face.jpg");
@@ -40,24 +40,62 @@ public class GooglyEyes extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
     
-    PImage face;
+    PImage spider;
     
     @Override
     public void settings() {
-        size(WIDTH, HEIGHT);
+    	size(WIDTH, HEIGHT);
+
     }
     
     @Override
     public void setup() {
-
+    	spider = loadImage("spiderForCode");
+    	spider.resize (800,600);
+    	
     }
-
+int circleX = 355;
+int circleY = 156;
     @Override
     public void draw() {
+    	background(spider);
+    	if (mousePressed) {
+            println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
+          }
+    	noStroke();
+    	fill(255,255,255);
+    	ellipse(355,156, 100,100);
+    	ellipse(444,156, 100,100);
+    	fill(10,10,10);
+    	ellipse(circleX,circleY, 40,48);
+    	ellipse(circleX + 89,circleY, 40,48);
 
+    	if(mouseX < 384 && mouseX > 323 && mouseY > 106 && mouseY < 198){
+    		circleX = mouseX;
+    		circleY = mouseY;
+    	}
+    	
+    	
+    	//else {
+    	//	circleX = (int) Math.sqrt(2500-(Math.pow(mouseY-156,2)) / (Math.pow(mouseX-355,2)));
+    	//}
+    	//top right
+    	//Mouse’s x-position: 384
+    	//Mouse’s y-position: 106
+    	//bottom left
+    	//Mouse’s x-position: 323
+    	//Mouse’s y-position: 198
+    	System.out.println(circleX);
     }
 
     static public void main(String[] args) {
         PApplet.main(GooglyEyes.class.getName());
     }
+    
+    
+    
+    
+    
+    
+    
 }
